@@ -50,5 +50,5 @@ serata3.corso_id = pygame.id
 
 ###PRIMA DI CONTINUARE CONTROLLARE
 ###CHECK
-course = Corso.query.all()
-print("List of courses: ", course)
+courses = Corso.query.all()
+print("List of courses: ", courses) #non corretto

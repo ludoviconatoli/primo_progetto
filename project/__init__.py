@@ -1,9 +1,10 @@
 #crea l'indice di sotto file e fa i setup iniziali
 import os
-#from pathlib import Path
+from pathlib import Path
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
+from flask_migrate import Migrate
 
 app = Flask(__name__, static_folder="static")
 
@@ -17,3 +18,4 @@ app.config ["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "d
 app.config["SQLALCHEMY_TRSCK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
+Migrate(app, db)
